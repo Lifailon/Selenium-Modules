@@ -12,6 +12,6 @@
 
 ### 🚀 Quick start
 
-Install all dependencies using a single script
+Install all dependencies using a single script **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium/blob/rsa/Deploy-Selenium-Drivers.ps1)**.
 
-Run the Get-GPT module and pass your question to the Text parameter.
+Run the **[Get-GPT](https://github.com/Lifailon/Deploy-Selenium/blob/rsa/Deploy-Selenium-Drivers.ps1) module** and pass your question to the **Text parameter**.
