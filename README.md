@@ -8,7 +8,7 @@
 
 ### 🎉 Example:
 
-
+![Image alt](https://github.com/Lifailon/Get-GPT/blob/rsa/Example.gif)
 
 ### 🚀 Quick start
 
