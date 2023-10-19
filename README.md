@@ -26,7 +26,11 @@ Use text translation with **[DeepL](https://www.deepl.com/translator)** directly
 
 ## Get-SpeedTest
 
-The module uses 3 different providers to choose from.
+The module uses 3 different providers to choose from:
+
+- **[LibreSpeed](https://librespeed.org/)**
+- **[OpenSpeedTest](https://openspeedtest.com/)**
+- **[Ookla](https://www.speedtest.net/)**
 
 📊 The module is debugged on PowerShell Core and can be used to collect metrics with output to InfluxDB. As an example, you can use my other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses the COM Object InternetExplorer.
 
