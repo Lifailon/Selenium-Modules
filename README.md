@@ -10,7 +10,7 @@ Install all dependencies using a single script **[Deploy-Selenium](https://githu
 
 🐥 The idea is that if you have no way to get an API key, you can use the 🙏 free web interface without authorization, to be able to implement the API interface for your scripts.
 
-🔔 This is a test case as it has a binding to the ChatGPT provider (10 requests per day, you can find another provider).
+🔔 This is a test case as it has a binding to the **[ChatGPT](https://chat-gpt.org/chat)** provider (10 requests per day, you can find another provider).
 
 ### 🎉 Example
 
