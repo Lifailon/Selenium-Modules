@@ -4,8 +4,6 @@
 
 Install all dependencies using a single script **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium/blob/rsa/Deploy-Selenium-Drivers.ps1)**.
 
-Run the **[Get-GPT](https://github.com/Lifailon/Get-GPT/blob/rsa/Get-GPT.psm1) module** and pass your question to the **Text parameter**.
-
 ## Get-FreeGPT
 
 🐥 The idea is that if you have no way to get an API key, you can use the 🙏 free web interface without authorization, to be able to implement the API interface for your scripts.
