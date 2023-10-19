@@ -1,6 +1,6 @@
 # Selenium-OpenAPI
 
-**Free native API for ChatGPT, Translate and SpeedTest use Selenium via PowerShell 💙**
+**Free native API for ChatGPT, Translate and SpeedTest use Selenium 💚 via 💙 PowerShell**
 
 ## 🚀 Quick start
 
