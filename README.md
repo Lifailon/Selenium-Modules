@@ -1,4 +1,4 @@
-# Selenium-OpenAPI
+# Selenium-Modules
 
 **Free native API for ChatGPT, Translate and SpeedTest use Selenium 💚 via 💙 PowerShell**
 
@@ -16,7 +16,7 @@ Install all dependencies using a single script **[Deploy-Selenium](https://githu
 
 The example uses a query to add two numbers and translate the text:
 
-![Image alt](https://github.com/Lifailon/Selenium-OpenAPI/blob/rsa/Example/Get-FreeGPT.gif)
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Example/Get-FreeGPT.gif)
 
 ## Get-Translate
 
@@ -24,7 +24,7 @@ Use text translation with **[DeepL](https://www.deepl.com/translator)** directly
 
 ### 🎉 Example
 
-![Image alt](https://github.com/Lifailon/Selenium-OpenAPI/blob/rsa/Example/Get-Translate.gif)
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Example/Get-Translate.gif)
 
 ## Get-SpeedTest
 
