@@ -57,7 +57,7 @@ Result   : openspeedtest.com/results/61834590
 Date     : Oct 19 2023 4:10 PM UTC
 
 PS C:\Users\lifailon\Desktop> $Test = Get-SpeedTest -Provider Ookla
-PS C:\Users\lifailon\Desktop> $Test
+PS C:\Users\lifailon\Desktop> $Test | Out-Default
 
 date               : 19.10.2023 19:11:27
 id                 : 15398128880
