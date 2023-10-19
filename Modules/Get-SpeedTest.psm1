@@ -11,11 +11,12 @@ $SupportDriver = "$path\WebDriver.Support.dll"
 $Chromium = (Get-ChildItem $path -Recurse | Where-Object Name -like chrome.exe).FullName
 Add-Type -Path $WebDriver
 Add-Type -Path $SupportDriver
+try {
 $ChromeOptions = New-Object OpenQA.Selenium.Chrome.ChromeOptions
 $ChromeOptions.BinaryLocation = $Chromium
 $ChromeOptions.AddArgument("start-maximized")
 $ChromeOptions.AcceptInsecureCertificates = $True
-#$ChromeOptions.AddArgument("headless")
+$ChromeOptions.AddArgument("headless")
 $Selenium = New-Object OpenQA.Selenium.Chrome.ChromeDriver($ChromeDriver, $ChromeOptions)
 if ($Provider -eq "Ookla") {
     $Url = "https://www.speedtest.net/"
@@ -116,11 +117,16 @@ if ($Provider -eq "Libre") {
     })
     return $Collections
 }
+}
+finally {
 $Selenium.Close()
 $Selenium.Quit()
 }
+}
 
 # Example:
-# Get-SpeedTest -Provider Ookla
-# Get-SpeedTest -Provider Open
 # Get-SpeedTest -Provider Libre
+# Get-SpeedTest -Provider Open
+# $Test = Get-SpeedTest -Provider Ookla
+# $Test | Out-Default
+# $Test.additional_servers
