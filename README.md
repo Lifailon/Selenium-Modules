@@ -43,26 +43,27 @@ PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Libre
 
 Download Upload    Ping    Jitter
 -------- ------    ----    ------
-274 Mbps 80.2 Mbps 22.2 ms 2.90 ms
+279 Mbps 78.3 Mbps 20.9 ms 6.02 ms
 
 PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Open 
 
-Download : 313.16 Mbps
-Upload   : 60.45 Mbps
-Ping     : 4.7 ms
-Jitter   : 0.60 ms
+Download : 308.51 Mbps
+Upload   : 71.31 Mbps
+Ping     : 5.1 ms
+Jitter   : 0.30 ms
 Carrier  : SEVEN-SKY
 Server   : Stockholm
-Result   : openspeedtest.com/results/61830155
-Date     : Oct 19 2023 11:39 AM UTC
+Result   : openspeedtest.com/results/61834590
+Date     : Oct 19 2023 4:10 PM UTC
 
-PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Ookla
+PS C:\Users\lifailon\Desktop> $Test = Get-SpeedTest -Provider Ookla
+PS C:\Users\lifailon\Desktop> $Test
 
-date               : 19.10.2023 14:40:37
-id                 : 15396980690
+date               : 19.10.2023 19:11:27
+id                 : 15398128880
 connection_icon    : wireless
-download           : 304368
-upload             : 355236
+download           : 309219
+upload             : 202992
 latency            : 3
 distance           : 0
 country_code       : RU
@@ -76,11 +77,21 @@ isp_rating         : 3.5
 test_rank          : 100
 test_grade         : A+
 test_rating        : 5
-idle_latency       : 3
-download_latency   : 9
-upload_latency     : 10
-additional_servers : {@{server_id=25680; server_name=Troitsk; sponsor_name=MosLine Group LLC}, @{server_id=28280; server_name=Odintsovo; sponsor_name=AO T 
-                     RC Odintsovo}, @{server_id=7328; server_name=Podolsk; sponsor_name=Quartz Telecom}}
-path               : result/15396980690
+idle_latency       : 4
+download_latency   : 17
+upload_latency     : 15
+additional_servers : {@{server_id=28482; server_name=Podolsk; sponsor_name=Toc 
+                     hka Dostupa}, @{server_id=32229; server_name=Podolsk; spo 
+                     nsor_name=P-T-K}, @{server_id=28280; server_name=Odintsov 
+                     o; sponsor_name=AO TRC Odintsovo}}
+path               : result/15398128880
 hasSecondary       : True
+
+PS C:\Users\lifailon\Desktop> $Test.additional_servers
+
+server_id server_name sponsor_name
+--------- ----------- ------------
+    28482 Podolsk     Tochka Dostupa
+    32229 Podolsk     P-T-K
+    28280 Odintsovo   AO TRC Odintsovo
 ```
