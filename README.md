@@ -20,7 +20,7 @@ The example uses a query to add two numbers and translate the text:
 
 ## Get-Translate
 
-Use text translation with **[DeepL](https://www.deepl.com/translator)** directly from the PowerShell command line.
+Use text translation directly from the PowerShell command line.
 
 ### 🎉 Example
 
