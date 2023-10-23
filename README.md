@@ -32,7 +32,7 @@ The module uses 2 providers to choose from:
 - **[Google](https://translate.google.fi)**
 
 ```PowerShell
-PS C:\Users\lifailon> $Result1 = Get-Translate -Provider DeepL -Text "Hello, my friend"
+>> $Result1 = Get-Translate -Provider DeepL -Text "Hello, my friend"
 >> $Result2 = Get-Translate -Provider Google -Text "Hello, my friend"
 >> Write-Host $Result1 -ForegroundColor Green
 >> Write-Host $Result2 -ForegroundColor Green
