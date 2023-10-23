@@ -26,13 +26,30 @@ Use text translation with **[DeepL](https://www.deepl.com/translator)** directly
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Example/Get-Translate.gif)
 
+The module uses 2 providers to choose from:
+
+- **[DeepL](https://www.deepl.com/translator)**
+- **[Google](https://translate.google.fi)**
+
+```PowerShell
+PS C:\Users\lifailon> $Result1 = Get-Translate -Provider DeepL -Text "Hello, my friend"
+>> $Result2 = Get-Translate -Provider Google -Text "Hello, my friend"
+>> Write-Host $Result1 -ForegroundColor Green
+>> Write-Host $Result2 -ForegroundColor Green
+Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/bron keepinanch-heads/5735@{#1052}) on port 9161
+Only local connections are allowed.
+...
+Здравствуйте, мой друг
+Здравствуй, друг      
+```
+
 ## Get-SpeedTest
 
-The module uses 3 different providers to choose from:
+The module uses 3 providers to choose from:
 
-- **[LibreSpeed](https://librespeed.org/)**
-- **[OpenSpeedTest](https://openspeedtest.com/)**
-- **[Ookla](https://www.speedtest.net/)**
+- **[LibreSpeed](https://librespeed.org)**
+- **[OpenSpeedTest](https://openspeedtest.com)**
+- **[Ookla](https://www.speedtest.net)**
 
 📊 The module is debugged on **PowerShell Core** and can be used to collect metrics with output to InfluxDB. As an example, you can use my other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses the COM Object InternetExplorer.
 
