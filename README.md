@@ -42,7 +42,7 @@ PS C:\Users\lifailon> Get-GPT "Исполняй роль переводчика.
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-example.gif)
 
-## Translation
+## Text Translation
 
 Translation text directly in the PowerShell console.
 
@@ -69,7 +69,7 @@ PS C:\Users\lifailon> Get-Translation -Provider Google -Text "I translating the 
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-and-translation-example.jpg)
 
-## SpeedTest
+## Internet SpeedTest
 
 The module uses 3 providers to choose from:
 
