@@ -1,30 +1,40 @@
 # Selenium-Modules
 
-**Free native API for ChatGPT, Translate and SpeedTest use Selenium 💚 via 💙 PowerShell**
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/logo.jpg)
+
+**Modules for free use (without API) chat GPT, text translation and SpeedTest Internet use Selenium 💚 via 💙 PowerShell**
 
 ## 🚀 Quick start
 
-Install all dependencies using a single script **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium/blob/rsa/Deploy-Selenium-Drivers.ps1)**.
+To deployment all dependencies from the GitHub repository **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium)**, use the command:
 
-## Get-FreeGPT
+```PowerShell
+Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Lifailon/Deploy-Selenium/rsa/Deploy-Selenium-Drivers.ps1")
+```
 
-🐥 The idea is that if you have no way to get an API key, you can use the 🙏 free web interface without authorization, to be able to implement the API interface for your scripts.
+## Chat-GPT
 
-🔔 This is a test case as it has a binding to the **[ChatGPT](https://chat-gpt.org/chat)** provider (10 requests per day, you can find another provider).
-
-### 🎉 Example
-
-The example uses a query to add two numbers and translate the text:
-
-![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Example/Get-FreeGPT.gif)
-
-## Get-Translate
-
-Use text translation directly from the PowerShell command line.
+🐥 The idea is that if you can't get an API key, you can use 🙏 a third-party **[free web-based Chat-GPT interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just ask questions right in the PowerShell console.
 
 ### 🎉 Example
 
-![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Example/Get-Translate.gif)
+```PowerShell
+PS C:\Users\lifailon> Get-GPT "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
+Конечно, я могу сделать это для вас! Сумма чисел 22 и 33 равна 55. Было бы здорово, если бы я мог помочь вам с еще большими вычислениями. Чем еще я могу вам помочь?
+
+PS C:\Users\lifailon> Get-GPT "Исполняй роль интерпретатора PowerShell. Выведи результат команды: Write-Host $(22+33)"
+Конечно! Вот результат выполнения команды Write-Host 55:
+55
+
+PS C:\Users\lifailon> Get-GPT "Исполняй роль переводчика. Переведи текст на русский язык: Hi! How can I help you?"
+Привет! Как я могу помочь вам?
+```
+
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-example.gif)
+
+## Translation
+
+Translation text directly in the PowerShell console.
 
 The module uses 2 providers to choose from:
 
@@ -32,18 +42,14 @@ The module uses 2 providers to choose from:
 - **[Google](https://translate.google.fi)**
 
 ```PowerShell
->> $Result1 = Get-Translate -Provider DeepL -Text "Hello, my friend"
->> $Result2 = Get-Translate -Provider Google -Text "Hello, my friend"
->> Write-Host $Result1 -ForegroundColor Green
->> Write-Host $Result2 -ForegroundColor Green
-Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/bron keepinanch-heads/5735@{#1052}) on port 9161
-Only local connections are allowed.
-...
-Здравствуйте, мой друг
-Здравствуй, друг      
+PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "I translating the text"
+Я перевожу текст
+
+PS C:\Users\lifailon> Get-Translation -Provider Google -Text "I translating the text"
+Я переводил текст
 ```
 
-## Get-SpeedTest
+## SpeedTest
 
 The module uses 3 providers to choose from:
 
@@ -51,7 +57,7 @@ The module uses 3 providers to choose from:
 - **[OpenSpeedTest](https://openspeedtest.com)**
 - **[Ookla](https://www.speedtest.net)**
 
-📊 The module is debugged on **PowerShell Core** and can be used to collect metrics with output to InfluxDB. As an example, you can use my other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses the COM Object InternetExplorer.
+📊 The module is debugged on **PowerShell Core** and can be used to collect metrics with output to InfluxDB. As an example, you can use other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses **InternetExplorer via COM Interface**.
 
 ### 🎉 Example
 
@@ -60,34 +66,33 @@ PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Libre
 
 Download Upload    Ping    Jitter
 -------- ------    ----    ------
-279 Mbps 78.3 Mbps 20.9 ms 6.02 ms
+171 Mbps 28.0 Mbps 22.0 ms 1.40 ms
 
 PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Open 
 
-Download : 308.51 Mbps
-Upload   : 71.31 Mbps
-Ping     : 5.1 ms
+Download : 254.68 Mbps
+Upload   : 80.24 Mbps
+Ping     : 5.6 ms
 Jitter   : 0.30 ms
 Carrier  : SEVEN-SKY
 Server   : Stockholm
-Result   : openspeedtest.com/results/61834590
-Date     : Oct 19 2023 4:10 PM UTC
+Result   : openspeedtest.com/results/63074923
+Date     : Jan 9 2024 4:06 PM UTC
 
-PS C:\Users\lifailon\Desktop> $Test = Get-SpeedTest -Provider Ookla
-PS C:\Users\lifailon\Desktop> $Test | Out-Default
+PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Ookla
 
-date               : 19.10.2023 19:11:27
-id                 : 15398128880
+date               : 09.01.2024 19:08:23
+id                 : 15729550610
 connection_icon    : wireless
-download           : 309219
-upload             : 202992
+download           : 272707
+upload             : 272986
 latency            : 3
 distance           : 0
 country_code       : RU
-server_id          : 15946
-server_name        : Vidnoe
-sponsor_name       : vidnoe.net
-sponsor_url        : 
+server_id          : 53268
+server_name        : Moscow
+sponsor_name       : City-Telecom ZAO
+sponsor_url        :
 connection_mode    : multi
 isp_name           : Seven Sky
 isp_rating         : 3.5
@@ -95,20 +100,11 @@ test_rank          : 100
 test_grade         : A+
 test_rating        : 5
 idle_latency       : 4
-download_latency   : 17
-upload_latency     : 15
-additional_servers : {@{server_id=28482; server_name=Podolsk; sponsor_name=Toc 
-                     hka Dostupa}, @{server_id=32229; server_name=Podolsk; spo 
-                     nsor_name=P-T-K}, @{server_id=28280; server_name=Odintsov 
-                     o; sponsor_name=AO TRC Odintsovo}}
-path               : result/15398128880
+download_latency   : 50
+upload_latency     : 14
+additional_servers : {@{server_id=22121; server_name=Moscow; sponsor_name=MosLine Group LLC}, @{server_id=23499; server_name=Moscow; sponsor_name=Марьино.net},
+                      @{server_id=11266; server_name=Moscow; sponsor_name=INETCOM LLC}}
+path               : result/15729550610
 hasSecondary       : True
-
-PS C:\Users\lifailon\Desktop> $Test.additional_servers
-
-server_id server_name sponsor_name
---------- ----------- ------------
-    28482 Podolsk     Tochka Dostupa
-    32229 Podolsk     P-T-K
-    28280 Odintsovo   AO TRC Odintsovo
 ```
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/speedtest-example.jpg)
