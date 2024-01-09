@@ -2,11 +2,11 @@
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/logo.jpg)
 
-**Modules for free use (without API) chat GPT, text translation and SpeedTest Internet use Selenium 💚 via 💙 PowerShell**
+**Modules Selenium 💚 via 💙 PowerShell for free use (without API) Chat GPT, Text Translation and Internet SpeedTest**
 
 ## 🚀 Quick start
 
-To deployment all dependencies from the GitHub repository **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium)**, use the command:
+To install or update all dependencies from the repository **[Deploy-Selenium](https://github.com/Lifailon/Deploy-Selenium)**, use the command:
 
 ```PowerShell
 Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Lifailon/Deploy-Selenium/rsa/Deploy-Selenium-Drivers.ps1")
@@ -14,7 +14,13 @@ Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubus
 
 ## Chat-GPT
 
-🐥 The idea is that if you can't get an API key, you can use 🙏 a third-party **[free web-based Chat-GPT interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just ask questions right in the PowerShell console.
+🐥 The idea is that if you can't get an API key, you can use a third-party 🙏 **[free Chat-GPT web interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just chat with the bot in the PowerShell console.
+
+### 🚀 Install
+
+```PowerShell
+Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-GPT/Get-GPT.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-GPT" -ItemType Directory -Force)\Get-GPT.psm1" -Force
+```
 
 ### 🎉 Example
 
@@ -41,6 +47,14 @@ The module uses 2 providers to choose from:
 - **[DeepL](https://www.deepl.com/translator)**
 - **[Google](https://translate.google.fi)**
 
+### 🚀 Install
+
+```PowerShell
+Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-Translation/Get-Translation.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-Translation" -ItemType Directory -Force)\Get-Translation.psm1" -Force
+```
+
+### 🎉 Example
+
 ```PowerShell
 PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "I translating the text"
 Я перевожу текст
@@ -48,6 +62,8 @@ PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "I translating the t
 PS C:\Users\lifailon> Get-Translation -Provider Google -Text "I translating the text"
 Я переводил текст
 ```
+
+![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-and-translation-example.jpg)
 
 ## SpeedTest
 
@@ -58,6 +74,12 @@ The module uses 3 providers to choose from:
 - **[Ookla](https://www.speedtest.net)**
 
 📊 The module is debugged on **PowerShell Core** and can be used to collect metrics with output to InfluxDB. As an example, you can use other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses **InternetExplorer via COM Interface**.
+
+### 🚀 Install
+
+```PowerShell
+Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-SpeedTest/Get-SpeedTest.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-SpeedTest" -ItemType Directory -Force)\Get-SpeedTest.psm1" -Force
+```
 
 ### 🎉 Example
 
@@ -107,4 +129,5 @@ additional_servers : {@{server_id=22121; server_name=Moscow; sponsor_name=MosLin
 path               : result/15729550610
 hasSecondary       : True
 ```
+
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/speedtest-example.jpg)
