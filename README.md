@@ -112,9 +112,9 @@ I am translating the text
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/translation-example.jpg)
 
-## Get-Translate
+## Console-Translate
 
-You can use the [Console-Trsanslate](https://github.com/Lifailon/Console-Translate) module to free translate text without dependencies using the API:
+You can use the [Console-Trsanslate](https://github.com/Lifailon/Console-Translate) module to free translate text without dependencies **using the API** (Google public key and DeepLX free API):
 
 ```PowerShell
 Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Lifailon/Console-Translate/rsa/Deploy-Console-Translate.ps1")
