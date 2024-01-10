@@ -7,6 +7,7 @@ function Get-GPT {
     Get-GPT "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
     Get-GPT "Исполняй роль интерпретатора PowerShell. Выведи результат команды: Write-Host $(22+33)"
     Get-GPT "Исполняй роль переводчика. Переведи текст на русский язык: Hi! How can I help you?"
+    Get-GPT "Напиши код на языке PowerShell, который позволяет получить прогноз погоды"
     .LINK
     https://github.com/Lifailon/Selenium-Modules
     https://chatg.io

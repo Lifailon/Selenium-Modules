@@ -2,7 +2,7 @@
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/logo.jpg)
 
-Modules in base **Selenium 💚 via 💙 PowerShell** for free use (without API) Chat GPT, Text Translation and Internet SpeedTest.
+Modules in base **Selenium 💚 via 💙 PowerShell** for free use (without API) **ChatGPT, Text Translation and Internet SpeedTest**.
 
 ## 🚀 Quick start
 
@@ -12,7 +12,7 @@ To install or update all dependencies (browser Chromium and drivers), use the co
 Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Lifailon/Deploy-Selenium/rsa/Deploy-Selenium-Drivers.ps1")
 ```
 
-## Chat-GPT
+## ChatGPT
 
 🐥 The idea is that if you can't get an API key, you can use a third-party 🙏 **[free Chat-GPT web interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just chat with the bot in the PowerShell console.
 
@@ -29,15 +29,52 @@ Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rs
 ```PowerShell
 PS C:\Users\lifailon> Import-Module Get-GPT
 
-PS C:\Users\lifailon> Get-GPT "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
-Конечно, я могу сделать это для вас! Сумма чисел 22 и 33 равна 55. Было бы здорово, если бы я мог помочь вам с еще большими вычислениями. Чем еще я могу вам помочь?
+PS C:\Users\lifailon> "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
+Конечно! Сумма чисел 22 и 33 равна 55. Чем еще я могу помочь?
 
 PS C:\Users\lifailon> Get-GPT "Исполняй роль интерпретатора PowerShell. Выведи результат команды: Write-Host $(22+33)"
-Конечно! Вот результат выполнения команды Write-Host 55:
+Конечно! Вот результат выполнения команды "Write-Host 55":
 55
 
 PS C:\Users\lifailon> Get-GPT "Исполняй роль переводчика. Переведи текст на русский язык: Hi! How can I help you?"
-Привет! Как я могу помочь вам?
+Привет! Как я могу тебе помочь?
+
+PS C:\Users\lifailon> Get-GPT "Напиши код на языке PowerShell, который позволяет получить прогноз погоды"
+Конечно! Вот пример кода на языке PowerShell, который использует API OpenWeatherMap для получения прогноза погоды:
+# Установка модуля Invoke-RestMethod, если необходимо
+if (-not (Get-Module -ListAvailable -Name 'PowerShellGet')) {
+    Install-PackageProvider -Name 'NuGet' -Force
+}
+if (-not (Get-Module -ListAvailable -Name 'PackageManagement')) {
+    Install-Module -Name 'PackageManagement' -Force
+}
+if (-not (Get-Module -ListAvailable -Name 'PowerShellGet')) {
+    Install-Module -Name 'PowerShellGet' -Force
+}
+if (-not (Get-Module -ListAvailable -Name 'Invoke-RestMethod')) {
+    Install-Module -Name 'Invoke-RestMethod' -Force
+}
+
+# Замените 'YOUR_API_KEY' на ваш ключ API OpenWeatherMap
+$apiKey = 'YOUR_API_KEY'
+
+# Замените 'CITY_NAME' на название города, для которого нужен прогноз погоды
+$city = 'CITY_NAME'
+
+# Формирование URL-запроса к API OpenWeatherMap
+$url = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey"
+
+# Получение данных о погоде через API
+$response = Invoke-RestMethod -Uri $url
+
+# Извлечение нужной информации из ответа API
+$temperature = $response.main.temp
+$description = $response.weather[0].description
+
+# Вывод информации о погоде
+Write-Host "Текущая температура в городе $city: $temperature градусов Цельсия"
+Write-Host "Описание погоды: $description"
+Не забудьте заменить 'YOUR_API_KEY' на ваш собственный ключ API OpenWeatherMap и 'CITY_NAME' на название города, для которого вы хотите получить прогноз погоды. После запуска скрипта, вы увидите текущую температуру и описание погоды
 ```
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-example.gif)
@@ -63,11 +100,25 @@ Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rs
 PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "I translating the text"
 Я перевожу текст
 
+PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "Я перевожу текст"
+I'm translating the text
+
 PS C:\Users\lifailon> Get-Translation -Provider Google -Text "I translating the text"
 Я переводил текст
+
+PS C:\Users\lifailon> Get-Translation -Provider Google -Text "Я перевожу текст" -Language en
+I am translating the text
 ```
 
 ![Image alt](https://github.com/Lifailon/Selenium-Modules/blob/rsa/Images/gpt-and-translation-example.jpg)
+
+## Get-Translate
+
+You can use the [Console-Trsanslate](https://github.com/Lifailon/Console-Translate) module to freely translate text without dependencies using the API:
+
+```PowerShell
+Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Lifailon/Console-Translate/rsa/Deploy-Console-Translate.ps1")
+```
 
 ## Internet SpeedTest
 

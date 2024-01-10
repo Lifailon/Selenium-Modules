@@ -4,8 +4,10 @@ function Get-Translation {
     Module for text translation
     .DESCRIPTION
     Examples:
-    Get-Translation -Provider DeepL -Text "I translating the text"
-    Get-Translation -Provider Google -Text "I translating the text"
+Get-Translation -Provider DeepL -Text "I translating the text"
+Get-Translation -Provider DeepL -Text "Я перевожу текст"
+Get-Translation -Provider Google -Text "I translating the text"
+Get-Translation -Provider Google -Text "Я перевожу текст" -Language en
     .LINK
     https://github.com/Lifailon/Selenium-Modules
     https://deepl.com/translator
@@ -13,7 +15,8 @@ function Get-Translation {
     #>
     param (
         [Parameter(Mandatory,ValueFromPipeline)][string]$Text,
-        [ValidateSet("DeepL","Google")][string]$Provider = "DeepL"
+        [ValidateSet("DeepL","Google")][string]$Provider = "DeepL",
+        [string]$Language = "ru"
     )
     $path = "$home\Documents\Selenium\"
     $log = "$path\ChromeDriver.log"
@@ -52,7 +55,7 @@ function Get-Translation {
         }
     }
     elseif ($Provider -eq "Google") {
-        $Url = "https://translate.google.ci/?hl=ru" # select to ru via url
+        $Url = "https://translate.google.ci/?sl=auto&tl=$Language&op=translate"
         $Selenium.Navigate().GoToUrl($Url)
         Start-Sleep 1
         $in = $Selenium.FindElements([OpenQA.Selenium.By]::ClassName("er8xn"))
