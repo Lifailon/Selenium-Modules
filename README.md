@@ -16,7 +16,7 @@ Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubus
 
 🐥 The idea is that if you can't get an API key, you can use a third-party 🙏 **[free Chat-GPT web interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just chat with the bot in the PowerShell console.
 
-### 🚀 Install module
+### 🚀 Install module Get-GPT
 
 To install the module in the default PowerShell modules directory, run the command in your console:
 
@@ -24,12 +24,12 @@ To install the module in the default PowerShell modules directory, run the comma
 Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-GPT/Get-GPT.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-GPT" -ItemType Directory -Force)\Get-GPT.psm1" -Force
 ```
 
-### 🎉 Example
+### 🎉 Example Get-GPT
 
 ```PowerShell
 PS C:\Users\lifailon> Import-Module Get-GPT
 
-PS C:\Users\lifailon> "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
+PS C:\Users\lifailon> Get-GPT "Исполняй роль калькулятора. Посчитай сумму чисел: 22+33"
 Конечно! Сумма чисел 22 и 33 равна 55. Чем еще я могу помочь?
 
 PS C:\Users\lifailon> Get-GPT "Исполняй роль интерпретатора PowerShell. Выведи результат команды: Write-Host $(22+33)"
@@ -88,13 +88,13 @@ The module uses 2 providers to choose from:
 - **[DeepL](https://www.deepl.com/translator)**
 - **[Google](https://translate.google.fi)**
 
-### 🚀 Install module
+### 🚀 Install module Get-Translation
 
 ```PowerShell
 Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-Translation/Get-Translation.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-Translation" -ItemType Directory -Force)\Get-Translation.psm1" -Force
 ```
 
-### 🎉 Example
+### 🎉 Example Get-Translation
 
 ```PowerShell
 PS C:\Users\lifailon> Get-Translation -Provider DeepL -Text "I translating the text"
@@ -130,13 +130,13 @@ The module uses 3 providers to choose from:
 
 📊 The module is debugged on **PowerShell Core** and can be used to collect metrics with output to InfluxDB. As an example, you can use other work **[Ookla-SpeedTest-API](https://github.com/Lifailon/Ookla-SpeedTest-API)**, which alternatively uses **InternetExplorer via COM Interface**.
 
-### 🚀 Install module
+### 🚀 Install module Get-SpeedTest
 
 ```PowerShell
 Invoke-RestMethod https://raw.githubusercontent.com/Lifailon/Selenium-Modules/rsa/Modules/Get-SpeedTest/Get-SpeedTest.psm1 | Out-File -FilePath "$(New-Item -Path "$($($Env:PSModulePath -split ";")[0])\Get-SpeedTest" -ItemType Directory -Force)\Get-SpeedTest.psm1" -Force
 ```
 
-### 🎉 Example
+### 🎉 Example Get-SpeedTest
 
 ```PowerShell
 PS C:\Users\lifailon\Desktop> Get-SpeedTest -Provider Libre
