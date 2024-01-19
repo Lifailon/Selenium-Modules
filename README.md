@@ -14,7 +14,7 @@ Invoke-Expression(New-Object Net.WebClient).DownloadString("https://raw.githubus
 
 ## ChatGPT
 
-⚠️ In the example, the server ChatGPT no longer works. A **new repository [GPT-to-Code](https://github.com/Lifailon/GPT-to-Code)** created to work with different AI models.
+> ⚠️ In the example, the server ChatGPT no longer works. A **new repository [GPT-to-Code](https://github.com/Lifailon/GPT-to-Code)** created to work with different AI models.
 
 🐥 The idea is that if you can't get an API key, you can use a third-party 🙏 **[free Chat-GPT web interface](https://chatg.io)** that doesn't require authorization to be able to implement the interface for your scripts or just chat with the bot in the PowerShell console.
 
